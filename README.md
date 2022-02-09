@@ -20,7 +20,9 @@ Or install it yourself as:
 
 ## Usage
 
-
+```ruby
+city_weather = GetCityWeatherData::Client.new(city: 'New York', api_key: ENV["WEATHER_API_KEY"])
+```
 
 ## Development
 
