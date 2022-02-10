@@ -1,13 +1,13 @@
 # GetCityWeatherData
 
-
+This gem gets weather data from WeatherAPI (https://www.weatherapi.com/) for a specified city.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'get_city_weather_data'
+gem 'get_city_weather_data', git: 'https://github.com/Dev-Denis-Paul/get-city-weather-data-gem', branch: :main
 ```
 
 And then execute:
@@ -22,7 +22,7 @@ Or install it yourself as:
 
 ```ruby
 client = GetCityWeatherData::Client.new(city: 'New York', api_key: ENV["WEATHER_API_KEY"])
-city_weather_data = client.get_weather
+response = client.get_weather
 ```
 
 ## Development
