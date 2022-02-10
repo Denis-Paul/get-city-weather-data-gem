@@ -35,8 +35,8 @@ Gem::Specification.new do |spec|
   # guide at: https://bundler.io/guides/creating_gem.html
 
   spec.add_dependency 'rest-client', '~> 2.1'
-  spec.add_dependency 'json'
+  spec.add_dependency 'json', '~> 2.6'
 
-  spec.add_development_dependency 'dotenv-rails'
-  spec.add_development_dependency 'byebug'
+  spec.add_development_dependency 'dotenv-rails', '2.7.6'
+  spec.add_development_dependency 'byebug', '11.1.3'
 end
