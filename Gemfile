@@ -9,7 +9,7 @@ gem "rake", "~> 13.0"
 
 gem "rspec", "~> 3.0"
 
-gem 'dotenv-rails'
+gem 'dotenv-rails', :github => "bkeepers/dotenv"
 
 gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 

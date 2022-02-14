@@ -1,5 +1,8 @@
 require "rest-client"
 require 'json'
+require 'dotenv'
+Dotenv.load
+# Dotenv.load(File.expand_path("../.env", __FILE__))
 
 module GetCityWeatherData
     class Client
@@ -7,7 +10,7 @@ module GetCityWeatherData
 
         attr_reader :city, :api_key
 
-        def initialize(city:, api_key:)
+        def initialize(city:, api_key: ENV["WEATHER_API_KEY"])
             @city = city
             @api_key = api_key
         end
