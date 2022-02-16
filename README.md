@@ -21,7 +21,12 @@ Or install it yourself as:
 ## Usage
 
 ```ruby
+# specifing the API key
 client = GetCityWeatherData::Client.new(city: 'New York', api_key: ENV["WEATHER_API_KEY"])
+response = client.get_weather
+
+# without specifing the API key
+client = GetCityWeatherData::Client.new(city: 'San Francisco')
 response = client.get_weather
 ```
 
