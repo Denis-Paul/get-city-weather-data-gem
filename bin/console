@@ -17,6 +17,7 @@ require "byebug"
 # byebug
 # client = GetCityWeatherData::Client.new(city: 'Berlin', api_key: ENV["WEATHER_API_KEY"])
 # client = GetCityWeatherData::Client.new(city: 'Berlin')
+# city_weather_data = GetCityWeatherData.get_weather('Berlin')
 
 require "irb"
 IRB.start(__FILE__)
