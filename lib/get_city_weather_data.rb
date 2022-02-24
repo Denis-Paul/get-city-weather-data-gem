@@ -5,8 +5,11 @@ require_relative "get_city_weather_data/version"
 module GetCityWeatherData
 
   # autoload :Client, "get_city_weather_data/client"
+  # autoload :Error, "get_city_weather_data/error"
 
   class << self
+    # class ApiError < StandardError; end
+
     attr_accessor :api_key
 
     BASE_URL = "http://api.weatherapi.com/v1/current.json"
@@ -30,9 +33,9 @@ module GetCityWeatherData
         rescue RestClient::ExceptionWithResponse => exception
             api_error_message = JSON.parse(exception.response, symbolize_names: true)[:error][:message]
             api_error_message
+            # raise ApiError, api_error_message
         end
     end
   end
 
-  autoload :Error, "get_city_weather_data/error"
 end
