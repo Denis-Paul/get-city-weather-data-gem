@@ -2,7 +2,7 @@
 
 A gem for WeatherAPI. Use when you need to get weather data for a specified city.
  
-Gem requires API keys from [WeatherAPI.com](https://www.weatherapi.com/)
+Gem requires an API key from: [WeatherAPI.com](https://www.weatherapi.com/)
 
 ## Installation
 
