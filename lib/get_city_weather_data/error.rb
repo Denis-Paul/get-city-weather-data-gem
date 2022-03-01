@@ -1,3 +1,3 @@
-module GetCityWeatherData
-    class Error < StandardError; end
-end
+# module GetCityWeatherData
+#     class Error < StandardError; end
+# end

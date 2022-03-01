@@ -5,6 +5,7 @@ require "bundler/setup"
 require "get_city_weather_data"
 require "byebug"
 # require 'dotenv'
+# require 'dotenv-rails'
 
 # You can add fixtures and/or initialization code here to make experimenting
 # with your gem easier. You can also use a different console, if you like.
@@ -15,6 +16,8 @@ require "byebug"
 
 # byebug
 # client = GetCityWeatherData::Client.new(city: 'Berlin', api_key: ENV["WEATHER_API_KEY"])
+# client = GetCityWeatherData::Client.new(city: 'Berlin')
+# city_weather_data = GetCityWeatherData.get_weather('Berlin')
 
 require "irb"
 IRB.start(__FILE__)
