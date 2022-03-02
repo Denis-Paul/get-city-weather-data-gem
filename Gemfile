@@ -6,11 +6,15 @@ source "https://rubygems.org"
 gemspec
 
 gem "rake", "~> 13.0"
-
 gem "rspec", "~> 3.0"
-
 gem 'dotenv-rails', :github => "bkeepers/dotenv"
-
-gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-
 gem 'json'
+
+group :development do
+    gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+end
+
+group :test do
+  gem "webmock"
+  gem 'vcr'    
+end
