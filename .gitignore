@@ -12,3 +12,4 @@
 
 *.gem
 .env
+/vcr_cassettes
