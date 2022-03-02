@@ -54,7 +54,7 @@ let(:city_weather_data_response) { GetCityWeatherData.get_weather('New York') }
 city_weather_data_response = GetCityWeatherData.get_weather('New York') 
 ```
 - run test spec file env variable: `WEATHER_API_KEY=*** rspec spec/get_city_weather_data_spec.rb -fd`
-After following the steps above reverse the changes and run the tests normally with: spec spec/get_city_weather_data_spec.rb -fd
+After following the steps above reverse the changes and run the tests normally with: `spec spec/get_city_weather_data_spec.rb -fd`
 
 ## Contributing
 
