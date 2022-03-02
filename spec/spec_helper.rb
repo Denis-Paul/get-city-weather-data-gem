@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 require "get_city_weather_data"
+require 'webmock/rspec'
+require 'vcr_setup'
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
