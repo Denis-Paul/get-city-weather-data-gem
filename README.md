@@ -31,7 +31,7 @@ end
 
 # succesful API response
 response_weather_data = GetCityWeatherData.get_weather('New York')
-# response_weather_data => {:last_updated_epoch=>1645694100, :last_updated=>"2022-02-24 04:15", :temp_c=>0.0, :temp_f=>32.0, :is_day=>0, :condition=>{:text=>"Partly cloudy", :icon=>"//cdn.weatherapi.com/weather/64x64/night/116.png", :code=>1003}, :wind_mph=>12.5, :wind_kph=>20.2, :wind_degree=>340, :wind_dir=>"NNW", :pressure_mb=>1027.0, :pressure_in=>30.33, :precip_mm=>0.0, :precip_in=>0.0, :humidity=>49, :cloud=>75, :feelslike_c=>-5.2, :feelslike_f=>22.6, :vis_km=>16.0, :vis_miles=>9.0, :uv=>1.0, :gust_mph=>16.1, :gust_kph=>25.9}
+# response_weather_data => "{:weather=>{:last_updated_epoch=>1648537200, :last_updated=>\"2022-03-29 03:00\", :temp_c=>-3.3, :temp_f=>26.1, :is_day=>0, :condition=>{:text=>\"Overcast\", :icon=>\"//cdn.weatherapi.com/weather/64x64/night/122.png\", :code=>1009}, :wind_mph=>18.6, :wind_kph=>29.9, :wind_degree=>320, :wind_dir=>\"NW\", :pressure_mb=>1019.0, :pressure_in=>30.08, :precip_mm=>0.0, :precip_in=>0.0, :humidity=>52, :cloud=>100, :feelslike_c=>-10.0, :feelslike_f=>13.9, :vis_km=>16.0, :vis_miles=>9.0, :uv=>1.0, :gust_mph=>18.8, :gust_kph=>30.2}, :location=>{:name=>\"New York\", :region=>\"New York\", :country=>\"United States of America\", :lat=>40.71, :lon=>-74.01, :tz_id=>\"America/New_York\", :localtime_epoch=>1648541473, :localtime=>\"2022-03-29 4:11\"}}"
 
 # in case the specified city is not valid then the API response will return the specific error message e.g. response_weather_data => "No matching location found."
 ```

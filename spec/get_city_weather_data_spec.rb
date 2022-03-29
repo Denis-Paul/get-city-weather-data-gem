@@ -56,8 +56,8 @@ RSpec.describe GetCityWeatherData do
       # p city_weather_data_response
       expect(city_weather_data_response).to be_an_instance_of(Hash)
       # expect(city_weather_data_response).to be_kind_of(Hash)
-      expect(city_weather_data_response).to have_key(:temp_c)
-      expect(city_weather_data_response).to have_key(:condition)
+      expect(city_weather_data_response[:weather]).to have_key(:temp_c)
+      expect(city_weather_data_response[:weather]).to have_key(:condition)
     end
 
     it "returns an API error message - wrong location provided", :vcr do
