@@ -56,8 +56,8 @@ RSpec.describe GetCityWeatherData do
       # p city_weather_data_response
       expect(city_weather_data_response).to be_an_instance_of(Hash)
       # expect(city_weather_data_response).to be_kind_of(Hash)
-      expect(city_weather_data_response[:weather]).to have_key(:temp_c)
-      expect(city_weather_data_response[:weather]).to have_key(:condition)
+      expect(city_weather_data_response[:weather]).to have_key(:temp_c).and have_key(:condition)
+      # expect(city_weather_data_response[:weather]).to have_key(:condition)
     end
 
     it "returns an API error message - wrong location provided", :vcr do
@@ -67,8 +67,8 @@ RSpec.describe GetCityWeatherData do
 
       city_weather_data_response = GetCityWeatherData.get_weather(wrong_city)
       # p city_weather_data_response
-      expect(city_weather_data_response).to be_an_instance_of(String)
-      expect(city_weather_data_response).to eq("No matching location found.")
+      expect(city_weather_data_response).to be_an_instance_of(String).and eq("No matching location found.")
+      # expect(city_weather_data_response).to eq("No matching location found.")
     end
 
     it "returns an API error message - invalid API key provided", :vcr do
@@ -78,8 +78,8 @@ RSpec.describe GetCityWeatherData do
 
       city_weather_data_response = GetCityWeatherData.get_weather(wrong_city)
       # p city_weather_data_response
-      expect(city_weather_data_response).to be_an_instance_of(String)
-      expect(city_weather_data_response).to eq("API key is invalid or not provided.")
+      expect(city_weather_data_response).to be_an_instance_of(String).and eq("API key is invalid or not provided.")
+      # expect(city_weather_data_response).to eq("API key is invalid or not provided.")
     end
   end
 end
