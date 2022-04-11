@@ -7,6 +7,12 @@ RSpec.describe GetCityWeatherData do
     expect(GetCityWeatherData::VERSION).not_to be nil
   end
 
+  before(:example, do_config: true) do
+    stub_request(:get, "#{api_url}?q=#{city}")
+      .with(headers: mocked_headers)
+      .to_return(status: ok_mocked_status, body: ok_mocked_body, headers: {})
+  end
+
   describe 'API call' do
     # let(:city_weather_data_response) { GetCityWeatherData.get_weather('New York') }
 
@@ -47,17 +53,14 @@ RSpec.describe GetCityWeatherData do
       #   .to_return(status: ok_mocked_status, body: ok_mocked_body, headers: {})
     # end
 
-    it "returns correctly city weather data", :vcr do
-      stub_request(:get, "#{api_url}?q=#{city}")
-        .with(headers: mocked_headers)
-        .to_return(status: ok_mocked_status, body: ok_mocked_body, headers: {})
-
+    it "returns correctly city weather data", :vcr, do_config: true do
       city_weather_data_response = GetCityWeatherData.get_weather(city)
       # p city_weather_data_response
       expect(city_weather_data_response).to be_an_instance_of(Hash)
       # expect(city_weather_data_response).to be_kind_of(Hash)
       expect(city_weather_data_response[:weather]).to have_key(:temp_c).and have_key(:condition)
       # expect(city_weather_data_response[:weather]).to have_key(:condition)
+      # .to raise_error() # TODO: add the raise_error matcher for future update
     end
 
     it "returns an API error message - wrong location provided", :vcr do
