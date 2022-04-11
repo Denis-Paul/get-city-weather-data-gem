@@ -39,4 +39,6 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'dotenv-rails', '2.7.6'
   
   spec.add_development_dependency 'byebug', '11.1.3'
+
+  # spec.executables << 'get_city_wather_data'
 end
