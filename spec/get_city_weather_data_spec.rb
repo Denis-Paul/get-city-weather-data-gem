@@ -53,6 +53,8 @@ RSpec.describe GetCityWeatherData do
       #   .to_return(status: ok_mocked_status, body: ok_mocked_body, headers: {})
     # end
 
+    # context "with succesful responses"
+
     it "returns correctly city weather data", :vcr, do_config: true do
       city_weather_data_response = GetCityWeatherData.get_weather(city)
       # p city_weather_data_response
