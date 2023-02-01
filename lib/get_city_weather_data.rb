@@ -29,7 +29,7 @@ module GetCityWeatherData
         begin
             response = RestClient.get "#{API_URL}?q=#{@city}", { content_type: :json, accept: :json, "key": api_key }
             current_weather = JSON.parse(response.body, symbolize_names: true)
-            current_weather[:current]
+            { weather: current_weather[:current], location: current_weather[:location] }
         rescue RestClient::ExceptionWithResponse => exception
             api_error_message = JSON.parse(exception.response, symbolize_names: true)[:error][:message]
             api_error_message

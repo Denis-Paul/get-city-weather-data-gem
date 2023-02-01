@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-
 require "get_city_weather_data"
 require 'webmock/rspec'
 require 'vcr_setup'
